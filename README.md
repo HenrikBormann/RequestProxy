@@ -4,27 +4,24 @@
 ![GitHub](https://img.shields.io/github/license/wakeworks/RequestProxy?style=flat-square)
 
 ## Introduction
----
 
 RequestProxy allows you to route a user's request through your server. 
 
 Imagine you want to use fonts from Adobe Typekit but your data protection officer tells you: "No communication to US companies under GDPR". Adobe doesn't allow self-hosting, so you can't use it normally. However, you could proxy the user's request through your server and return the font to the user without revealing their IP address.
 
 ## Requirements
----
 
 * silverstripe/framework ^4.0
 * php-curl extension
 
 ## Installation
----
 
 ```
 composer require wakeworks/requestproxy
 ```
 
 ## Basic Configuration
----
+
 ```yaml
 WakeWorks\RequestProxy\RequestProxy:
   proxy_rules:
@@ -35,7 +32,6 @@ WakeWorks\RequestProxy\RequestProxy:
 Your links will now be available under `/_requestproxy/link1` and `/_requestproxy/link2`.
 
 ## Usage
----
 
 ### Templates
 
@@ -52,7 +48,6 @@ Requirements::css($proxy_url);
 ```
 
 ## Advanced Configuration
----
 
 Normally, RequestProxy will forward the Content-Type header and the returned HTTP status code. You can, however, force other ones.
 
@@ -66,7 +61,6 @@ WakeWorks\RequestProxy\RequestProxy:
 ```
 
 ## Rate Limiting
----
 
 Proxying requests can be dangerous, e.g. users could in theory make you DDoS the target service.
 

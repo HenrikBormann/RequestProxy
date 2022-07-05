@@ -31,20 +31,8 @@ class RequestProxy {
         return self::$inst;
     }
 
-    public static function get_url($key = '') {
-        $proxyRules = Config::inst()->get(__CLASS__, 'proxy_rules');
-
-        if(!is_array($proxyRules) || !isset($proxyRules[$key])) {
-            return null;
-        }
-
-        $target = $proxyRules[$key];
-
-        if(is_array($target)) {
-            return isset($target['url']) ? $target['url'] : null;
-        } else {
-            return $target;
-        }
+    public static function get_proxy_url($key = '') {
+        return "/_requestproxy/$key";
     }
 
     public function make_request($url) {

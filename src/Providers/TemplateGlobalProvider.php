@@ -12,6 +12,6 @@ class TemplateGlobalProvider implements \SilverStripe\View\TemplateGlobalProvide
     }
 
     public static function template_data($key = '') {
-        return RequestProxy::get_url($key);
+        return RequestProxy::get_proxy_url($key);
     }
 }

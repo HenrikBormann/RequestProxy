@@ -43,7 +43,7 @@ In Templates, use `$RequestProxy(link1)` to get the link
 use SilverStripe\View\Requirements;
 use WakeWorks\RequestProxy\RequestProxy;
 
-$proxy_url = RequestProxy::get_url('link1');
+$proxy_url = RequestProxy::get_proxy_url('link1');
 Requirements::css($proxy_url);
 ```
 

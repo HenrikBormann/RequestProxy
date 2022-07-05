@@ -1,0 +1,16 @@
+---
+Name: requestproxyratelimit
+---
+SilverStripe\Core\Injector\Injector:
+  WakeWorks\RequestProxy\RateLimitMiddleware:
+    class: WakeWorks\RequestProxy\Middlewares\RateLimitMiddleware
+    properties:
+      ExtraKey: 'requestproxylimiter'
+      MaxAttempts: 10
+      Decay: 1
+  WakeWorks\RequestProxy\RateLimitedRequestProxyController:
+    class: SilverStripe\Control\Middleware\RequestHandlerMiddlewareAdapter
+    properties:
+      RequestHandler: '%$WakeWorks\RequestProxy\Controllers\RequestProxyController'
+      Middlewares:
+        - '%$WakeWorks\RequestProxy\RateLimitMiddleware'

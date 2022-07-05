@@ -1,0 +1,9 @@
+---
+Name: requestproxyroutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    '_requestproxy/$Key': '%$WakeWorks\RequestProxy\RateLimitedRequestProxyController'

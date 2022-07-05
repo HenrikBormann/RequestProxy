@@ -1,0 +1,25 @@
+{
+    "name": "wakeworks/requestproxy",
+    "description": "Silverstripe 4 module allowing you to proxy requests from your visitors to other servers",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe",
+        "request",
+        "proxy",
+        "fonts",
+        "css",
+        "javascript"
+    ],
+    "license": "BSD-3-Clause",
+    "require": {
+        "ext-curl": "*",
+        "silverstripe/framework": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WakeWorks\\RequestProxy\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

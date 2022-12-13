@@ -4,6 +4,7 @@ namespace WakeWorks\RequestProxy\Controllers;
 
 use SilverStripe\Control\Controller;
 use WakeWorks\RequestProxy\RequestProxy;
+use InvalidArgumentException;
 
 class RequestProxyController extends Controller {
 
@@ -21,8 +22,21 @@ class RequestProxyController extends Controller {
 
         $response = $this->getResponse();
 
+        if($curl_response['statusCode'] === 0) {
+            // A timeout has occured, set HTTP status code to timeout.
+            $curl_response['statusCode'] = 408;
+        }
+
+        try {
+            $response->setStatusCode(
+                isset($target['status_code']) ?
+                    $target['status_code'] : $curl_response['statusCode']
+            );
+        } catch(InvalidArgumentException $_exception) {
+            $response->setStatusCode(500);
+        }
+
         $response
-            ->setStatusCode(isset($target['status_code']) ? $target['status_code'] : $curl_response['statusCode'])
             ->addHeader('Content-Type', isset($target['content_type']) ? $target['content_type'] : $curl_response['contentType'])
             ->setBody($curl_response['body']);
         

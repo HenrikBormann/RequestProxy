@@ -15,6 +15,9 @@
         "ext-curl": "*",
         "silverstripe/framework": "^4.0"
     },
+    "require-dev": {
+        "silverstripe/recipe-testing": "^2"
+    },
     "autoload": {
         "psr-4": {
             "WakeWorks\\RequestProxy\\": "src/"

@@ -1,4 +1,8 @@
 node_modules
 /vendor/
 .DS_Store
-
+/resources/
+/assets/
+.phpunit.result.cache
+composer.lock
+behat.yml

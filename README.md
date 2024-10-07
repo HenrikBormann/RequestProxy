@@ -1,4 +1,4 @@
-# RequestProxy for Silverstripe 4
+# RequestProxy for Silverstripe 5
 
 ![Packagist Version](https://img.shields.io/packagist/v/wakeworks/requestproxy?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/wakeworks/RequestProxy?style=flat-square)
@@ -11,7 +11,7 @@ Imagine you want to use fonts from Adobe Typekit but your data protection office
 
 ## Requirements
 
-* silverstripe/framework ^4.0
+* silverstripe/framework ^5.0
 * php-curl extension
 
 ## Installation

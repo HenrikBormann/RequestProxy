@@ -13,10 +13,10 @@
     "license": "BSD-3-Clause",
     "require": {
         "ext-curl": "*",
-        "silverstripe/framework": "^4 || ^5"
+        "silverstripe/framework": "^6"
     },
     "require-dev": {
-        "silverstripe/recipe-testing": "^3"
+        "silverstripe/recipe-testing": "^4"
     },
     "autoload": {
         "psr-4": {
